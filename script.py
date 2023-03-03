@@ -1,17 +1,21 @@
 import requests
 import json
 import csv
+import os
 
 session = requests.Session()
-access_token = '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'
+access_token = os.environ.get('github')
 session.headers.update({'Authorization': f'Bearer {access_token}'})
 org = 'schauhan2-test'
 
-file = open('output.csv','w', newline='')
+file = open('admin-portal/_data/output.csv','w', newline='')
 writer = csv.writer(file)
+writer.writerow(['repository','user','role'])
 
 repoResponse = session.get(f'https://api.github.com/orgs/{org}/repos')
 repos = json.loads(repoResponse.content)
+
+
 
 
 for repo in repos:

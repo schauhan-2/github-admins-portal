@@ -1,0 +1,5 @@
+repository,user,role
+repo-1,rkadekar,not-admin
+repo-1,schauhan-2,admin
+repo-2,rkadekar,maintainer
+repo-2,schauhan-2,admin

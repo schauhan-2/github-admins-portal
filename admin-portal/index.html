@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Github Admins Portal</title>
+  </head>
+  <body>
+    <table>
+        {% for member in site.data.output %}
+          <tr>
+            <td>
+                {{ output.repository}}
+            </td>
+            <td>
+                <a href="https://github.com/{{ output.user }}">
+                  {{ output.user }}
+                </a>
+            </td>
+            <td>
+                {{output.role}}
+            </td>
+          </tr>
+        {% endfor %}
+          </table>
+  </body>
+</html>
